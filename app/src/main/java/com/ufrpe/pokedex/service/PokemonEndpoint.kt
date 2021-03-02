@@ -5,10 +5,11 @@ import com.ufrpe.pokedex.model.PokemonList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface PokemonEndpoint {
     @GET("pokemon/")
-    fun getPokemonList() : Call<PokemonList>
+    fun getPokemonList(@Query("offset") n: Int, @Query("limit") l : Int) : Call<PokemonList>
 
     @GET("{id}/")
     fun getDetails(@Path("id") id: String) : Call<Details>
