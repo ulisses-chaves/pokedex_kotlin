@@ -10,33 +10,24 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ufrpe.pokedex.R
 import com.ufrpe.pokedex.adapter.PokemonAdapter
-import com.ufrpe.pokedex.model.Pokemon
+import com.ufrpe.pokedex.model.Results
 import com.ufrpe.pokedex.model.PokemonList
 import com.ufrpe.pokedex.service.ApiService
 import com.ufrpe.pokedex.service.PokemonEndpoint
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call
 import retrofit2.Response
 
 class HomeFragment : Fragment() {
-
-  private lateinit var homeViewModel: HomeViewModel
+  private  var listpokemon : PokemonAdapter = PokemonAdapter(this)
 
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    //homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
     val root = inflater.inflate(R.layout.fragment_home, container, false)
-    //val textView: TextView = root.findViewById(R.id.text_home)
-    //homeViewModel.text.observe(viewLifecycleOwner, Observer {
-    //  textView.text = it
-    //})
     pokeList(root)
-    //rv.setHasFixedSize(true)
-    //rv.layoutManager = LinearLayoutManager(root.context)
     return root
   }
 
@@ -50,17 +41,18 @@ class HomeFragment : Fragment() {
       }
 
       override fun onResponse(call: Call<PokemonList>, response: Response<PokemonList>) {
-
-        fillRV(response.body(), root, context)
+        val pokemonList: PokemonList? = response.body()
+        val pokemons : List<Results> = pokemonList!!.results
+        listpokemon.addListPokemon(pokemons)
+        fillRV( root, context)
       }
 
     })
-
   }
 
-  private fun fillRV(pokemonList: PokemonList?, root: View, context: Context?) {
+  private fun fillRV(root: View, context: Context?) {
     val rv = root.rv
-    rv.adapter = PokemonAdapter(pokemonList, context)
+    rv.adapter = listpokemon
     rv.layoutManager = LinearLayoutManager(root.context)
   }
 }
