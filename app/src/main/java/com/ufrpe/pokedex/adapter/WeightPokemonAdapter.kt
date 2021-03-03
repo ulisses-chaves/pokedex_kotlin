@@ -59,9 +59,9 @@ class WeightPokemonAdapter (context: WeightFragment, pokemons : List<Details>) :
     inner class WeightViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(pokemon: Details) {
             with(itemView){
-                this.txtName.text = pokemon.name
-                this.txtWeight.text = pokemon.weight
-                Glide.with(context).load(pokemon.sprites.front_default).into(this.pokemonVIew)
+     //           this.txtName.text = pokemon.name
+      //          this.txtWeight.text = pokemon.weight
+        //        Glide.with(context).load(pokemon.sprites.front_default).into(this.pokemonVIew)
             }
         }
     }

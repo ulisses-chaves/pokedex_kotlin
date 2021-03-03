@@ -2,10 +2,12 @@
 <resources>
     <string name="app_name">Pokedex</string>
     <string name="title_home">Pokedex</string>
-    <string name="title_type">Tipo</string>
+    <string name="title_details">Detalhes</string>
     <string name="title_weight">Peso</string>
     <string name="title_fav">Favoritos</string>
     <string name="name">Nome</string>
     <string name="number">Número</string>
+    <string name="height">Altura</string>
+    <string name="type">Tipo</string>
 
 </resources>

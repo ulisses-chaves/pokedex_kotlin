@@ -6,11 +6,17 @@ object PokemonRepository {
     private var pokemons : MutableList<Details> = mutableListOf()
 
     fun addList (details: Details) {
-        pokemons.add(details)
+        if(!pokemons.contains(details)){
+            pokemons.add(details)
+        }
     }
 
-    fun getCrescentOrderList() : MutableList<Details> {
-        pokemons.sortBy { it.weight }
+    fun remList(details: Details) {
+        pokemons.remove(details)
+    }
+
+    fun getList() : MutableList<Details>{
         return pokemons
     }
+
 }

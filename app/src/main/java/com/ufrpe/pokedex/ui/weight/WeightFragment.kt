@@ -62,33 +62,18 @@ class WeightFragment : Fragment() {
   }
 
   fun allPokemons(rv : RecyclerView, pagination: Int, flag : Boolean) {
-    Thread(Runnable {
-      fillRV(rv, pagination, flag)
-    }).start()
+    fillRV(rv, pagination, flag)
   }
 
   private fun fillRV(rv : RecyclerView, l : Int, flag : Boolean) {
-    var list = PokemonApi.getPokemonList(l)
-    val listpokemon: List<Details> = list.results.map { rs->
-      val pokemon = PokemonApi.getPokemons(rs.name)
-      Log.d("asd", pokemon.name)
-      Details(
-        pokemon.name,
-        pokemon.id,
-        pokemon.weight,
-        pokemon.height,
-        pokemon.type,
-        pokemon.sprites
-      )
-    }
-    var asas :List<Details>
-    if (flag) {
+    var asas : List <Details> = PokemonRepository.getList()
+    /*if (flag) {
       asas = listpokemon.sortedByDescending { it.weight.toInt() }
     } else {
       asas = listpokemon.sortedBy { it.weight.toInt() }
-    }
+    }*/
     rv.post {
-      rv.adapter = WeightPokemonAdapter(this, asas)
+      rv.adapter = PokemonAdapter(asas)
     }
 
   }

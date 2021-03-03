@@ -12,14 +12,8 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ufrpe.pokedex.ui.type.TypeFragment"
-        android:label="@string/title_type"
-        tools:layout="@layout/fragment_type" />
-
-    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.ufrpe.pokedex.ui.weight.WeightFragment"
-        android:label="@string/title_weight"
+        android:label="@string/title_fav"
         tools:layout="@layout/fragment_weight" />
 </navigation>

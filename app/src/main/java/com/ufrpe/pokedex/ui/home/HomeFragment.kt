@@ -1,32 +1,18 @@
 package com.ufrpe.pokedex.ui.home
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.Toast
-import androidx.annotation.ContentView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ufrpe.pokedex.R
 import com.ufrpe.pokedex.adapter.PokemonAdapter
 import com.ufrpe.pokedex.model.Details
-import com.ufrpe.pokedex.model.PokemonList
-import com.ufrpe.pokedex.model.Results
-import com.ufrpe.pokedex.service.ApiService
 import com.ufrpe.pokedex.service.PokemonApi
-import com.ufrpe.pokedex.service.PokemonEndpoint
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import kotlinx.android.synthetic.main.item_main.view.*
-import retrofit2.Call
-import retrofit2.Response
 
 class HomeFragment : Fragment() {
   //private  var listpokemon : PokemonAdapter = PokemonAdapter(this)
@@ -98,7 +84,7 @@ class HomeFragment : Fragment() {
         )
       }
       rv.post {
-        rv.adapter = PokemonAdapter(this, listpokemon)
+        rv.adapter = PokemonAdapter( listpokemon)
       }
   }
 }
