@@ -18,10 +18,10 @@ class ApiService {
         }
 
         //fun getPokeApiInstance(): PokeApiClient {
-        //    val pokeApi = PokeApiClient()
-        //    return pokeApi
+          //  val pokeApi = PokeApiClient()
+           // return pokeApi
             //val bulbasaur = pokeApi.getPokemonSpecies(1)
             //println(bulbasaur)
-        //}
-    }
+        }
+    //}
 }

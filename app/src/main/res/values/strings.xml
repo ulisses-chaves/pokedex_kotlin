@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Pokedex</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="number">number</string>
+    <string name="title_home">Pokedex</string>
+    <string name="title_type">Type</string>
+    <string name="title_weight">Weight</string>
+    <string name="title_fav">Favorites</string>
+    <string name="name">Name</string>
+    <string name="number">Number</string>
 </resources>

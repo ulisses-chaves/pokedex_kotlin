@@ -1,4 +1,4 @@
-package com.ufrpe.pokedex.ui.notifications
+package com.ufrpe.pokedex.ui.weight
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

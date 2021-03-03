@@ -1,4 +1,4 @@
-package com.ufrpe.pokedex.ui.dashboard
+package com.ufrpe.pokedex.ui.type
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

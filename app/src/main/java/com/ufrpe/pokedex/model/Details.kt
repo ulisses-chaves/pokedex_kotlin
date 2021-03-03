@@ -9,6 +9,6 @@ data class Details (
     @SerializedName("id") val id: String,
     @SerializedName("weight") val weight: String,
     @SerializedName("height") val height: String,
-    @SerializedName("type") val count: Type,
+    @SerializedName("type") val type: Type? = null,
     @SerializedName("sprites") val sprites: Sprites
 )
