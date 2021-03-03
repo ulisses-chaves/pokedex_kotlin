@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.ufrpe.pokedex.ui.weight.WeightFragment"
+        android:name="com.ufrpe.pokedex.ui.favorite.FavoriteFragment"
         android:label="@string/title_fav"
         tools:layout="@layout/fragment_weight" />
 </navigation>

@@ -9,5 +9,6 @@
     <string name="number">Número</string>
     <string name="height">Altura</string>
     <string name="type">Tipo</string>
+    <string name="order">Ordem peso:</string>
 
 </resources>

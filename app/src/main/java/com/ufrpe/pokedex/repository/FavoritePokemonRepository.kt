@@ -2,7 +2,7 @@ package com.ufrpe.pokedex.repository
 
 import com.ufrpe.pokedex.model.Details
 
-object PokemonRepository {
+object FavoritePokemonRepository {
     private var pokemons : MutableList<Details> = mutableListOf()
 
     fun addList (details: Details) {
@@ -18,5 +18,7 @@ object PokemonRepository {
     fun getList() : MutableList<Details>{
         return pokemons
     }
+
+
 
 }

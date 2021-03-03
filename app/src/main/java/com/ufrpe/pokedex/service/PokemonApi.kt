@@ -15,13 +15,13 @@ object PokemonApi {
         endpoint = retrofitClient.create(PokemonEndpoint::class.java)
     }
 
-    fun getPokemonList(l : Int) : PokemonList {
-        val callback = endpoint.getPokemonList(l, 20)
+    fun getPokemons(name : String) : Details {
+        val callback = endpoint.getDetails(name)
         return callback.execute().body()!!
     }
 
-    fun getPokemons(name : String) : Details {
-        val callback = endpoint.getDetails(name)
+    fun getAllPokemons() : PokemonList {
+        val callback = endpoint.getAllPokemons(0, 850)
         return callback.execute().body()!!
     }
 }

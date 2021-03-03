@@ -1,16 +1,33 @@
 package com.ufrpe.pokedex.repository
 
 import com.ufrpe.pokedex.model.Details
-import com.ufrpe.pokedex.model.PokemonList
 
 object PokemonListRepository {
-    var pokemonsList : PokemonList = PokemonList("", "", "", emptyList())
+    var pokemonsList : MutableList<Details> = mutableListOf()
 
-    fun setList (pokemonList: PokemonList) {
-        pokemonsList = pokemonList
+    fun addList (details: Details) {
+        pokemonsList.add(details)
     }
 
-    fun getList() : PokemonList{
+    fun getList() : MutableList<Details>{
         return pokemonsList
+    }
+
+    fun setFav(id : Int, flag : Boolean) {
+        if (!flag) {
+            pokemonsList.get(id).fav = false
+        } else {
+            pokemonsList.get(id).fav = true
+        }
+    }
+
+    fun getListCrescent() : List<Details> {
+        val newList = pokemonsList.sortedBy { it.weight.toInt() }
+        return newList
+    }
+
+    fun getListDrec() : List<Details> {
+        val newList = pokemonsList.sortedByDescending { it.weight.toInt() }
+        return newList
     }
 }

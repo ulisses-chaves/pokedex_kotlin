@@ -1,7 +1,5 @@
 package com.ufrpe.pokedex.model
 
-import Type
-import android.net.Uri
 import com.google.gson.annotations.SerializedName
 
 data class Results (
